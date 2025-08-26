@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Ujang Kedu</title>
+    <!-- Hubungkan ke file CSS -->
+    <link rel="icon" type="image/png" href="Ujang Kedu.jpg">
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logoo"><img src="ujang kedu.jpg" /></div>
+        <div class="judul">Kasir Ujang Kedu</div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="menu-list">
+            <li id="b"><a href="register.html">Registerasi</a></li>
+            <li id="b"><a href="tentang.html">Tentang</a></li>
+            <li id="c"><a href="calculator.html">Kalkulator</a></li>
+            <li id="c"><a href="nota.html">Nota</a></li>
+            <li id="d"><a href="kn.html">Kontak</a></li>
+        </ul>
+    </nav>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Selamat Datang di Kasir Ujang Kedu</h1>
+        <p>Melayani dengan cepat, mudah, dan terpercaya</p>
+    </header>
+    <footer>
+        <div class="footer-contact">
+            <h3>Hubungi Kami</h3>
+            <p>Email: <a href="mailto:ujangkedu@gmail.com">ujangkedu@gmail.com</a></p>
+            <p>Telepon: <a href="tel:+62812345678902">+62 812-345-678-902</a></p>
+            <p>Alamat: <a
+                    href="Jl. Taman Kopo Indah 3, Mekar Rahayu, Kec. Margaasih, Kabupaten Bandung, Jawa Barat 40218">SMAN
+                    1 Margaasih</a></p>
+        </div>
+        <div class="footer-social">
+            <h3>Sosial Media</h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/kz.olivia_?igsh=cWRrOXdnZGl0dXEw" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/seelsbilqiss._?igsh=MTNsNWxsZmwyaGVkYQ==" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/444.cayendo?igsh=MWxkM3FweHhjN3BiMw==" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/kikioksigen?igsh=a3phcXVrNnhwNmg=" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const menuList = document.querySelector(".menu-list");
+
+    toggleBtn.addEventListener("click", () => {
+        menuList.classList.toggle("active");
+    });
+</script>
+
+</html>

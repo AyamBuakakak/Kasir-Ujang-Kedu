@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang</title>
+    <link rel="stylesheet" href="tentang.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tentang</h1>
+    </header>
+
+    <main>
+        <section id="alasan">
+            <h2>Alasan Membuat Website</h2>
+            <p>Jadi, jika kita menggunakan metode manual atau kasir konvensional, data transaksi biasanya dicatat di
+                buku atau aplikasi sederhana, sehingga rawan terjadi kesalahan pencatatan, kehilangan data, ataupun
+                keterlambatan dalam menghitung laporan keuangan. Nah, dengan adanya sistem kasir layanan kami, semua
+                data transaksi bisa langsung disimpan ke dalam basis data (database), yang memungkinkan pencarian,
+                perhitungan, dan pembuatan laporan dilakukan secara cepat dan akurat.</p>
+            <p>Selain itu juga, layanan kasir kami juga mendukung pengelolaan fitur tambahan seperti promo dan pajak.
+                Promo dapat diprogram secara otomatis, misalnya potongan harga saat membeli produk tertentu, sehingga
+                kasir tidak perlu menghitung manual. Pajak juga bisa dihitung otomatis sesuai aturan yang berlaku,
+                sehingga hasil perhitungan lebih konsisten. Hal ini penting dalam informatika karena otomatisasi bisa
+                mengurangi human error dan meningkatkan efisiensi proses bisnis.</p>
+            <p>Layanan yang kami buat juga memiliki keunggulan lain dari sistem berbasis web, yaitu Fleksibilitas Akses.
+                Karena berbasis web, layanan ini dapat diakses melalui berbagai perangkat seperti komputer, laptop,
+                bahkan smartphone, asalkan terkoneksi dengan internet atau jaringan lokal. </p>
+        </section>
+
+        </section>
+
+        <section id="tujuan">
+            <h2>Tujuan</h2>
+            <p>1. Efisiensi, mempercepat proses transaksi dan perhitungan.</p>
+            <p>2. Akurasi, mengurangi kesalahan pencatatan dan perhitungan manual.</p>
+            <p>3. Integrasi, menyatukan data transaksi, promo, dan pajak dalam satu sistem.</p>
+            <p>4. Aksesibilitas, dapat digunakan di berbagai perangkat melalui web.</p>
+            <p>5. Pengelolaan Data memudahkan pencatatan, pencarian, serta pembuatan laporan penjualan.</p>
+        </section>
+
+        <section id="dokumentasi">
+            <h2>Dokumentasi</h2>
+            <button onclick="tampilkanFoto()">Tampilkan</button>
+            <div id="fotoDokumentasi" class="hidden">
+                <div class="foto-container">
+                    <img src="dok1.jpg" alt="">
+                    <img src="dok2.jpg" alt="">
+                    <img src="dok3.jpg" alt="">
+                </div>
+        </section>
+    </main>
+    <script src="tentang.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tombolContainer = document.createElement("div");
+            tombolContainer.style.position = "absolute";
+            tombolContainer.style.top = "20px";
+            tombolContainer.style.left = "20px";
+            tombolContainer.style.zIndex = "9999"; // pastikan tampil di atas konten lain
+
+            const homeBtn = document.createElement("button");
+            homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            homeBtn.style.padding = "10px 16px";
+            homeBtn.style.border = "2px solid #38a32f";
+            homeBtn.style.borderRadius = "8px";
+            homeBtn.style.backgroundColor = "transparent";
+            homeBtn.style.color = "#2f4f2f";
+            homeBtn.style.cursor = "pointer";
+            homeBtn.style.fontSize = "14px";
+
+            homeBtn.addEventListener("click", function () {
+                window.location.href = "menu.html";
+            });
+
+            // Tambahkan tombol ke container lalu ke body
+            tombolContainer.appendChild(homeBtn);
+            document.body.appendChild(tombolContainer);
+
+            // Responsif: Ubah teks tombol saat ukuran layar diubah
+            window.addEventListener("resize", function () {
+                homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Belanja</title>
+    <link rel="stylesheet" href="nota.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Nota Belanja</h1>
+        <form id="belanjaForm">
+            <div class="input-box">
+                <input type="text" id="namaBarang" placeholder="Nama Barang" required>
+            </div>
+            <div class="input-box">
+                <input type="number" id="hargaBarang" placeholder="Harga Barang" required>
+            </div>
+            <div class="input-box">
+                <input type="number" id="jumlahBarang" placeholder="jumlah Barang" required>
+            </div>
+            <button type="submit" class="btn">Tambah ke Nota</button>
+        </form>
+        <table id="notaTable">
+            <thead>
+                <tr>
+                    <th>Nama Barang</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="total-box">
+            <h2>Total: Rp <span id="totalBelanja">0</span></h2>
+        </div>
+        <div class="btn-group">
+            <button id="cetakNota" class="btn green">Cetak Nota</button>
+            <button id="resetNota" class="btn red">Reset Nota</button>
+        </div>
+    </div>
+</body>
+<script src="nota.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tombolContainer = document.createElement("div");
+        tombolContainer.style.position = "absolute";
+        tombolContainer.style.top = "20px";
+        tombolContainer.style.left = "20px";
+        tombolContainer.style.zIndex = "9999"; // pastikan tampil di atas konten lain
+
+        const homeBtn = document.createElement("button");
+        homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+        homeBtn.style.padding = "10px 16px";
+        homeBtn.style.border = "2px solid #38a32f";
+        homeBtn.style.borderRadius = "8px";
+        homeBtn.style.backgroundColor = "transparent";
+        homeBtn.style.color = "#2f4f2f";
+        homeBtn.style.cursor = "pointer";
+        homeBtn.style.fontSize = "14px";
+
+        homeBtn.addEventListener("click", function () {
+            window.location.href = "menu.html";
+        });
+
+        // Tambahkan tombol ke container lalu ke body
+        tombolContainer.appendChild(homeBtn);
+        document.body.appendChild(tombolContainer);
+
+        // Responsif: Ubah teks tombol saat ukuran layar diubah
+        window.addEventListener("resize", function () {
+            homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+        });
+    });
+</script>
+
+</html>

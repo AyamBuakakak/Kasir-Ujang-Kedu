@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- CSS Eksternal -->
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+    <header class="header-kontak">
+        <div class="container-header">
+            <h1>Login</h1>
+            <h2>Masukkan informasi akun Anda</h2>
+        </div>
+    </header>
+
+    <section class="kontak">
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Nama Pengguna</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan username" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required />
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- Script Login -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                alert("Silakan isi semua kolom!");
+                return;
+            }
+
+            // Simulasi validasi login
+            if (username === "admin" && password === "1234") {
+                alert("Login berhasil!");
+                // Bisa diarahkan ke halaman dashboard misalnya
+                window.location.href = "dashboard.html"; // ganti sesuai halaman tujuan
+            } else {
+                alert("Username atau password salah!");
+            }
+        });
+    </script>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                alert("Silakan isi semua kolom!");
+                return;
+            }
+
+            if (username === "admin" && password === "1234") {
+                alert("Login berhasil!");
+                window.location.href = "dashboard.html"; // Ganti sesuai halaman
+            } else {
+                alert("Username atau password salah!");
+            }
+        });
+
+        // Tombol navigasi ke Register
+        const registerBtn = document.createElement("button");
+        registerBtn.textContent = "Belum punya akun? Daftar";
+        registerBtn.style.marginTop = "20px";
+        registerBtn.style.padding = "10px 20px";
+        registerBtn.style.border = "2px solid #38a32f";
+        registerBtn.style.borderRadius = "8px";
+        registerBtn.style.backgroundColor = "transparent";
+        registerBtn.style.color = "#2f4f2f";
+        registerBtn.style.cursor = "pointer";
+        registerBtn.style.display = "block";
+        registerBtn.style.marginLeft = "auto";
+        registerBtn.style.marginRight = "auto";
+
+        registerBtn.addEventListener("click", function () {
+            window.location.href = "register.html";
+        });
+
+        document.querySelector(".kontak").appendChild(registerBtn);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tombolContainer = document.createElement("div");
+            tombolContainer.style.position = "absolute";
+            tombolContainer.style.top = "20px";
+            tombolContainer.style.left = "20px";
+            tombolContainer.style.zIndex = "9999"; // pastikan tampil di atas konten lain
+
+            const homeBtn = document.createElement("button");
+            homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            homeBtn.style.padding = "10px 16px";
+            homeBtn.style.border = "2px solid #38a32f";
+            homeBtn.style.borderRadius = "8px";
+            homeBtn.style.backgroundColor = "transparent";
+            homeBtn.style.color = "#2f4f2f";
+            homeBtn.style.cursor = "pointer";
+            homeBtn.style.fontSize = "14px";
+
+            homeBtn.addEventListener("click", function () {
+                window.location.href = "menu.html";
+            });
+
+            // Tambahkan tombol ke container lalu ke body
+            tombolContainer.appendChild(homeBtn);
+            document.body.appendChild(tombolContainer);
+
+            // Responsif: Ubah teks tombol saat ukuran layar diubah
+            window.addEventListener("resize", function () {
+                homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

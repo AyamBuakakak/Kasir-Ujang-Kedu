@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #d8f9d7;
+    color: #2f4f2f;
+    overflow-x: hidden;
+}
+
+/* Header Registrasi */
+.header-kontak {
+    background-color: #e1fbe0;
+    padding: 60px 20px 40px;
+    text-align: center;
+    animation: fadeUp 1.2s ease forwards;
+    border-bottom: 2px solid #bde5bb;
+}
+
+.container-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-kontak h1 {
+    font-size: 36px;
+    color: #2f4f2f;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.header-kontak h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #2f4f2f;
+}
+
+/* Form Registrasi */
+.kontak {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2f4f2f;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #38a32f;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2b7f23;
+}
+
+/* Animasi opsional */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-kontak h1 {
+    font-size: 36px;
+    color: #2f4f2f;
+    /* Bisa diganti warna lain */
+    margin-bottom: 15px;
+    font-weight: 800;
+}

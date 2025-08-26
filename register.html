@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Registrasi</title>
+
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Eksternal -->
+    <link rel="stylesheet" href="register.css" />
+</head>
+
+<body>
+
+    <header class="header-kontak">
+        <div class="container-header">
+            <h1>Form Registrasi Pengguna</h1>
+            <h2>Silakan isi data Anda dengan benar</h2>
+        </div>
+    </header>
+
+    <section class="kontak">
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Nama Pengguna</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Konfirmasi Kata Sandi</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Ulangi password"
+                    required>
+            </div>
+
+            <button type="submit">Daftar</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                alert("Kata sandi tidak cocok!");
+                return;
+            }
+
+            alert("Registrasi berhasil!");
+            window.location.href = "login.html";
+        });
+
+        // Tombol navigasi ke Login
+        const loginBtn = document.createElement("button");
+        loginBtn.textContent = "Sudah punya akun? Login";
+        loginBtn.style.marginTop = "20px";
+        loginBtn.style.padding = "10px 20px";
+        loginBtn.style.border = "2px solid #38a32f";
+        loginBtn.style.borderRadius = "8px";
+        loginBtn.style.backgroundColor = "transparent";
+        loginBtn.style.color = "#2f4f2f";
+        loginBtn.style.cursor = "pointer";
+        loginBtn.style.display = "block";
+        loginBtn.style.marginLeft = "auto";
+        loginBtn.style.marginRight = "auto";
+
+        loginBtn.addEventListener("click", function () {
+            window.location.href = "login.html";
+        });
+
+        document.querySelector(".kontak").appendChild(loginBtn);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tombolContainer = document.createElement("div");
+            tombolContainer.style.position = "absolute";
+            tombolContainer.style.top = "20px";
+            tombolContainer.style.left = "20px";
+            tombolContainer.style.zIndex = "9999"; // pastikan tampil di atas konten lain
+
+            const homeBtn = document.createElement("button");
+            homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            homeBtn.style.padding = "10px 16px";
+            homeBtn.style.border = "2px solid #38a32f";
+            homeBtn.style.borderRadius = "8px";
+            homeBtn.style.backgroundColor = "transparent";
+            homeBtn.style.color = "#2f4f2f";
+            homeBtn.style.cursor = "pointer";
+            homeBtn.style.fontSize = "14px";
+
+            homeBtn.addEventListener("click", function () {
+                window.location.href = "menu.html";
+            });
+
+            // Tambahkan tombol ke container lalu ke body
+            tombolContainer.appendChild(homeBtn);
+            document.body.appendChild(tombolContainer);
+
+            // Responsif: Ubah teks tombol saat ukuran layar diubah
+            window.addEventListener("resize", function () {
+                homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            });
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

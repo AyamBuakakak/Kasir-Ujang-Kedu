@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak Kami</title>
+    <link rel="stylesheet" href="kn.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="header-kontak">
+        <div class="container-header">
+            <h1>Informasi Lebih Lanjut</h1>
+            <p class="anggota-title">Melaporkan sebuah bug atau error kepada kami, atau pendapat serta kritik terkait
+                dengan website kami</p>
+            <h2>Kami siap membantu Anda. Silakan isi form di bawah ini:</h2>
+        </div>
+    </header>
+
+    <!-- Form Kontak -->
+    <section class="kontak">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" rows="5" required></textarea>
+            </div>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <!-- Script Toggle Menu -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tombolContainer = document.createElement("div");
+            tombolContainer.style.position = "absolute";
+            tombolContainer.style.top = "20px";
+            tombolContainer.style.left = "20px";
+            tombolContainer.style.zIndex = "9999"; // pastikan tampil di atas konten lain
+
+            const homeBtn = document.createElement("button");
+            homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            homeBtn.style.padding = "10px 16px";
+            homeBtn.style.border = "2px solid #38a32f";
+            homeBtn.style.borderRadius = "8px";
+            homeBtn.style.backgroundColor = "transparent";
+            homeBtn.style.color = "#2f4f2f";
+            homeBtn.style.cursor = "pointer";
+            homeBtn.style.fontSize = "14px";
+
+            homeBtn.addEventListener("click", function () {
+                window.location.href = "menu.html";
+            });
+
+            // Tambahkan tombol ke container lalu ke body
+            tombolContainer.appendChild(homeBtn);
+            document.body.appendChild(tombolContainer);
+
+            // Responsif: Ubah teks tombol saat ukuran layar diubah
+            window.addEventListener("resize", function () {
+                homeBtn.textContent = window.innerWidth <= 600 ? "←" : "← Kembali ke Beranda";
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

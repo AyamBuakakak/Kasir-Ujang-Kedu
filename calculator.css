@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #567a4b;
+}
+
+.container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 20px 20px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #000e1a;
+    pointer-events: none;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.buttons button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.buttons button:active {
+    transform: scale(0.99);
+}
+
+.operator {
+    color: #38a32f;
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 700px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .display {
+        flex: 1;
+        height: 100%;
+        font-size: 36px;
+        padding: 20px;
+        border: 2px solid #a5d6a7;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        margin-bottom: 0;
+    }
+
+    .buttons {
+        flex: 1.5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+    }
+
+    .buttons button {
+        font-size: 24px;
+        padding: 20px;
+    }
+}
+
+
+/* Responsif untuk tampilan layar kecil (HP) */
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 90%;
+        padding: 16px;
+    }
+
+    .display {
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .buttons button {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+.display {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    caret-color: transparent;
+    /* Sembunyikan kursor teks */
+    user-select: none;
+    /* Tidak bisa diseleksi */
+    pointer-events: none;
+    /* Tidak bisa diklik/ketik */
+}
+
+.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: 2px solid #a5d6a7;
+    /* Tetap ada border */
+    border-radius: 8px;
+    background-color: #f5fff4;
+    /* Warna latar lembut */
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #000e1a;
+
+    caret-color: transparent;
+    /* Sembunyikan kursor */
+    user-select: none;
+    /* Tidak bisa diseleksi */
+    pointer-events: none;
+    /* Tidak bisa diklik/ketik */
+}
